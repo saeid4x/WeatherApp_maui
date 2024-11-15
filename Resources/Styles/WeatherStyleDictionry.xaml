@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WeatherDemo.Resources.Styles.WeatherStyleDictionry">
+
+    <!-- Define the gradient color for background app -->
+    <LinearGradientBrush x:Key="GradientBackground" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Color="#0A0068" Offset="0.0"/>
+        <GradientStop Color="#26007B" Offset="0.40"/>
+        <GradientStop Color="#42008D" Offset="0.50"/>
+        <GradientStop Color="#5E00A0" Offset="0.70"/>
+        <GradientStop Color="#7A00B2" Offset="0.85"/>
+        <GradientStop Color="#973da4" Offset="1.0"/> 
+
+
+    </LinearGradientBrush>
+
+
+    
+
+
+</ResourceDictionary>

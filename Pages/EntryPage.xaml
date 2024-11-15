@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:skia="clr-namespace:SkiaSharp.Extended.UI.Controls;assembly=SkiaSharp.Extended.UI"
+             x:Class="WeatherDemo.Pages.EntryPage"
+             Title=""
+             Background="{StaticResource GradientBackground}"
+              NavigationPage.HasNavigationBar="False"
+                
+             >
+
+
+    <Grid
+        RowDefinitions="0.3*,0.1*,0.3*"
+        Margin="15"
+        >
+
+        <skia:SKLottieView 
+            Source="weather_animations/sunny.json"
+            RepeatCount="-1"
+            
+            
+            />
+
+        <VerticalStackLayout
+            Grid.Row="1"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+           
+            >
+
+            <Label
+                Text="IRAN Sky"
+                FontAttributes="Bold"
+                FontSize="70"
+                TextColor="White"
+                
+               
+                />
+
+            <Label 
+                Text="وضعیت هوای کشور"
+                FontAttributes="Bold"
+                FontSize="35"
+                TextColor="Orange"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                FontFamily="manshoor_bold"
+                />
+
+        </VerticalStackLayout>
+
+
+        <VerticalStackLayout
+            Grid.Row="2"
+            VerticalOptions="Center"
+            Spacing="10"
+            Padding="20"
+            Margin="0,40,0,0"
+            
+            >
+            <Label 
+                Text="نام شهر مورد نظر را وارد کنید"
+                HorizontalOptions="Center"
+                FontAttributes="Bold"
+                FontSize="20"
+                TextColor="White"
+                FontFamily="iranSans_black"
+                />
+
+            <Grid>
+                <Frame Opacity="0.3" />
+                <SearchBar
+                   x:Name="txtCityName"
+                    Placeholder="Enter city name..."   
+                    PlaceholderColor="White"
+                    TextColor="White"                  
+                    HorizontalOptions="Fill"
+                
+                    />
+                
+            </Grid>
+
+            
+
+            <Button
+                Text="{Binding SearchButtonText}"               
+                BackgroundColor="Orange"
+                TextColor="Black"
+                FontSize="20"
+                FontAttributes="Bold"
+                Command="{Binding SearchCommand}"
+                CommandParameter="{Binding Source={x:Reference txtCityName }, Path=Text}"
+                FontFamily="iranSans_black"
+               
+                />
+
+
+            <HorizontalStackLayout
+                FlowDirection="RightToLeft" 
+               
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+               
+                >
+                
+                
+                <skia:SKLottieView
+                      Source="another_animation/loading-linear-colourfull.json"
+                      RepeatCount="-1" 
+                    IsVisible="{Binding IsLoadingVisible}"
+                    HeightRequest="80"
+                    WidthRequest="80"
+                    Padding="0"
+   
+                     />
+                
+                
+                <!--<Label 
+                Text="{Binding ErrorMessage}"
+                TextColor="White"
+                FontSize="20"
+                FontAttributes="Bold"
+                FlowDirection="RightToLeft"
+                />-->
+
+              
+
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+
+
+    </Grid>
+</ContentPage>
